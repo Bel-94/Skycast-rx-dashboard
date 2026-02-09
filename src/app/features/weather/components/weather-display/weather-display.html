@@ -7,7 +7,7 @@
         <p class="text-white/60 text-sm">Weather Dashboard</p>
       </div>
 
-      <app-search />
+      <app-search (cityChange)="onCityChange($event)" />
     </div>
 
     <!-- Main grid -->
