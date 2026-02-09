@@ -1,4 +1,4 @@
 export const environment = {
-  production: false,
-  apiBaseUrl: 'https://api.example.com',
+  openWeatherApiKey: 'YOUR_KEY_HERE',
 };
+
