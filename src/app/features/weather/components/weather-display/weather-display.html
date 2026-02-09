@@ -1,1 +1,83 @@
-<p>weather-display works!</p>
+<div class="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-white">
+  <div class="mx-auto max-w-6xl px-4 py-6">
+    <!-- Top bar -->
+    <div class="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+      <div>
+        <h1 class="text-xl font-semibold">SkyCast</h1>
+        <p class="text-white/60 text-sm">Weather Dashboard</p>
+      </div>
+
+      <app-search />
+    </div>
+
+    <!-- Main grid -->
+    <div class="grid gap-6 lg:grid-cols-3">
+      <!-- Left: hero + stats -->
+      <div class="lg:col-span-2 space-y-6">
+        <app-current-weather-card />
+
+        <!-- Stats grid -->
+        <div class="grid gap-4 sm:grid-cols-2">
+          <app-stat-card label="Humidity" value="78%" icon="💧" />
+          <app-stat-card label="Wind" value="12 km/h" icon="🌬️" />
+          <app-stat-card label="Visibility" value="8 km" icon="👁️" />
+          <app-stat-card label="Pressure" value="1014 hPa" icon="⏲️" />
+        </div>
+      </div>
+
+      <!-- Right: placeholders for forecasts -->
+      <div class="space-y-6">
+        <div class="rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-md">
+          <div class="flex items-center justify-between mb-4">
+            <h2 class="font-medium">Hourly Forecast</h2>
+            <span class="text-white/50 text-sm">coming soon</span>
+          </div>
+
+          <div class="flex gap-3 overflow-x-auto pb-2">
+            <div class="min-w-[92px] rounded-xl border border-white/10 bg-white/5 p-3 text-center">
+              <div class="text-white/60 text-xs">10 AM</div>
+              <div class="text-lg font-semibold mt-1">21°</div>
+              <div class="text-white/60 text-xs mt-1">☁️</div>
+            </div>
+            <div class="min-w-[92px] rounded-xl border border-white/10 bg-white/5 p-3 text-center">
+              <div class="text-white/60 text-xs">1 PM</div>
+              <div class="text-lg font-semibold mt-1">24°</div>
+              <div class="text-white/60 text-xs mt-1">🌤️</div>
+            </div>
+            <div class="min-w-[92px] rounded-xl border border-white/10 bg-white/5 p-3 text-center">
+              <div class="text-white/60 text-xs">4 PM</div>
+              <div class="text-lg font-semibold mt-1">22°</div>
+              <div class="text-white/60 text-xs mt-1">🌧️</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-md">
+          <div class="flex items-center justify-between mb-4">
+            <h2 class="font-medium">Daily Forecast</h2>
+            <span class="text-white/50 text-sm">coming soon</span>
+          </div>
+
+          <div class="space-y-3">
+            <div class="flex items-center justify-between rounded-xl border border-white/10 bg-white/5 px-4 py-3">
+              <span class="text-white/70">Mon</span>
+              <span class="text-white/70">🌧️</span>
+              <span class="font-medium">24° / 18°</span>
+            </div>
+            <div class="flex items-center justify-between rounded-xl border border-white/10 bg-white/5 px-4 py-3">
+              <span class="text-white/70">Tue</span>
+              <span class="text-white/70">☁️</span>
+              <span class="font-medium">22° / 17°</span>
+            </div>
+            <div class="flex items-center justify-between rounded-xl border border-white/10 bg-white/5 px-4 py-3">
+              <span class="text-white/70">Wed</span>
+              <span class="text-white/70">🌤️</span>
+              <span class="font-medium">25° / 19°</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
