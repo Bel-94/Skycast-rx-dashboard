@@ -6,9 +6,9 @@ frontend:
         - npm ci
     build:
       commands:
-        - npm run build -- --configuration production
+        - npx ng build skycast-rx-dashboard --configuration production
   artifacts:
-    baseDirectory: dist/skycast-rx-dashboard
+    baseDirectory: dist/skycast-rx-dashboard/browser
     files:
       - '**/*'
   cache:
