@@ -27,9 +27,16 @@ export class WeatherDisplay {
         map((api) => ({ status: 'success', data: api } as const)),
         startWith({ status: 'loading' } as const),
         catchError((err) => {
-          const msg = err?.status === 404 ? 'City not found' : 'Something went wrong';
+          console.log('Weather API error:', err);
+
+          const msg =
+            err?.status === 404 ? 'City not found' :
+            err?.status === 401 ? 'Invalid API key' :
+            `Something went wrong (${err?.status || 'network'})`;
+
           return of({ status: 'error', message: msg } as const);
         })
+
       )
     ),
     startWith({ status: 'idle' } as const)

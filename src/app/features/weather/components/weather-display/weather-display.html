@@ -14,7 +14,18 @@
     <div class="grid gap-6 lg:grid-cols-3">
       <!-- Left: hero + stats -->
       <div class="lg:col-span-2 space-y-6">
-        <app-current-weather-card />
+        <ng-container *ngIf="vm$ | async as vm">
+          <div *ngIf="vm.status === 'loading'" class="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-md">
+            <p class="text-white/60">Loading…</p>
+          </div>
+
+          <div *ngIf="vm.status === 'error'" class="rounded-2xl border border-red-500/20 bg-red-500/10 p-6">
+            <p class="text-red-200 font-medium">{{ vm.message }}</p>
+          </div>
+
+          <app-current-weather-card *ngIf="vm.status === 'success'" [api]="vm.data" />
+        </ng-container>
+
 
         <!-- Stats grid -->
         <div class="grid gap-4 sm:grid-cols-2">

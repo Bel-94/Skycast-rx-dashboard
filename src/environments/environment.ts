@@ -1,4 +1,4 @@
 export const environment = {
-  openWeatherApiKey: 'YOUR_KEY_HERE',
+  openWeatherApiKey: '368d57bae3ae3dabb7633d6851e9febc',
 };
 
